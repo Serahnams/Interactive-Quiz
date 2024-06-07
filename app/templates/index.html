@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive_Quiz - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            font-size: 1.2em;
+        }
+
+        .about-child {
+            outline: 2px solid green;
+            justify-content: space-between;
+        }
+
+        .about-image {
+            justify-self: right;
+            width: 100%;
+        }
+
+        .hero-section {
+
+            background-image: url("/static/img/quiz.jpg");
+            background-color: #8c10b2;
+
+            background-size: cover;
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section p {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section .btn {
+            font-size: 1.2rem;
+            padding: 10px 30px;
+        }
+
+        .features-section {
+            background-image: url("/static/img/hourglass.jpg");
+            padding: 50px 0;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-box i {
+            font-size: 3rem;
+            color: hsl(308, 69%, 40%);
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #393d40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href=" {{ url_for('route.index')}}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('auth.login')}}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('auth.register')}}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1>Interactive_Quizzes</h1>
+            <p>Where Every Question is an Adventure!</p>
+            <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg">Start</a>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box bg-white p-4 shadow-sm">
+                        <i class="fas fa-book-open"></i>
+                        <h3 class="mt-3">Topics</h3>
+                        <p>A range of quiz topics available, enticing users to explore different subjects.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box bg-white p-4 shadow-sm">
+                        <i class="fas fa-user-clock"></i>
+                        <h3 class="mt-3">Time limit</h3>
+                        <p>Try our special time-based challenges for an extra thrill. Can you beat the clock?.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box bg-white p-4 shadow-sm">
+                        <i class="fas fa-trophy"></i>
+                        <h3 class="mt-3">Scores</h3>
+                        <p>Be among the top quiz takers!Compete with friends and see how high you rank.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section bg-light py-5" id="about">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-6 feature-box bg-white p-4 shadow-sm" style="text-align: justify;">
+                    <h2 style="text-align: center;">Interactive_Quiz</h2>
+                    <p>your ultimate destination for fun and educational quizzes! Our app is designed to challenge your knowledge, entertain
+                    you, and help you learn new things every day. We aim to make learning fun and engaging. Whether you're a trivia enthusiast or just looking to pass the time, our
+                    quizzes are designed for everyone.</p>
+                </div>
+                <div class="col-md-6 about-image"
+                    style="display:flex;  justify-content: flex-end; align-items: center;">
+                    <img src="../static/img/topics.jpg" style="width:450px; height:250px; border-radius: 1em;" ;
+                        class="img-fluid" alt="About QuizApp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 QuizApp. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

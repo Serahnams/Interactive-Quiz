@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="instructions-section">
+        <div class="header">
+            <h1>Quiz Instructions</h1>
+        </div>
+        <p><Strong>Please read the following instructions carefully before starting the quiz:</Strong></p>
+        <ul>
+            <li>1. Read each question carefully.</li>
+            <li>2. The quiz will start immediately after you click the button.</li>
+            <li>3. Select the best answer from the provided options.</li>
+            <li>4. Try to answer each question within the allotted time to maximize your score.</li>
+            <li>5. Keep an eye on the timer and pace yourself.</li>
+            <li>6. Your progress will be saved automatically.</li>
+            <li>7. Ensure you have a stable internet connection.</li>
+            <li>8. Click on the "Start Quiz" button to begin.</li>
+        </ul>
+        <a href="{{ url_for('route.quiz', id = 1, user = session.get ('user_id')) }}" class="start-btn">Start Quiz</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="profile-header">
+        <img src="../static/img/hi (2).png" alt="User profile picture" >
+        <p>{{ user.email }}</p>
+        <h1>Hello, {{ user.username }}!</h1>
+        <P><strong>Are you ready for the challenge?</strong> </P>
+        <P><strong>Let the fun begin!</strong></P>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Scores</h5>
+                    <ul class="list-group">
+                        {% for score in user.scores %}
+                        <li class="list-group-item">
+                            Quiz Score : <b> {{ score.score }} </b>
+                        </li>
+                        {% else %}
+                        <li class="list-group-item">
+                            No scores available yet.
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <a href="{{ url_for('route.instruction')}}" class="btn btn-start-quiz">Next</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

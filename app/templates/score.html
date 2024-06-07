@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <style>
+        body {
+            background-image: url("/static/img/pic.jpg");
+            background-size: top; /* Cover the entire background */
+            background-position: center;
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            height: 100vh; /* Set height to full viewport height */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox for centering content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
+        
+        .result-container {
+            margin-top: 466px;
+            margin-bottom: 200px;
+            margin-left: 500px;
+            margin-right: 500px;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #744caf;
+            border-radius: 10px;
+            background-color: #ca42e5;
+            text-align: center;
+        }
+
+        .result-text {
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% if correct_count is not none %}
+    <div class="result-container">
+        <div class="result-text">You scored: {{ correct_Count }} out of {{ questions_list|length }}</div>
+        <p class="time-taken">Time taken: {{ elapsed_time }} 5 seconds</p>
+    </div>
+    {% endif %}
+</body>
+
+</html>
